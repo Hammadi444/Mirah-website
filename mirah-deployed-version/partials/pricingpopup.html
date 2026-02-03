@@ -1,0 +1,123 @@
+<div id="manualPaymentModal" class="mkModal" style="display: none;">
+  <div class="mkModal__overlay"></div>
+  <div class="mkModal__content">
+    <button class="mkModal__close" type="button">&times;</button>
+    
+    <div class="mkModal__header">
+      <h3 class="mkModal__title">Upgrade to <span id="mpPlanName" class="highlight">Plan</span></h3>
+      <p class="mkModal__sub">Complete payment to activate your account.</p>
+    </div>
+
+    <div class="mkModal__body">
+      
+      <div class="mkBillBox">
+        <div class="mkBillRow">
+          <span>Cycle</span>
+          <strong id="mpCycle">...</strong>
+        </div>
+        <div class="mkBillRow">
+          <span>Amount</span>
+          <strong class="mkPriceTag" id="mpAmount">...</strong>
+        </div>
+      </div>
+
+      <div class="mkBankBox">
+        <p class="mkLabel">Payment Methods:</p>
+        
+        <div class="mkMethods">
+          
+          <div class="mkMethodRow">
+            <div class="mkMethodIcon">
+              <img src="/public/pricing-popup-logos/Easypaisa-logo.png" alt="EP" class="mkMethodImg">
+            </div>
+            <div class="mkMethodInfo">
+              <span class="mkMName">EasyPaisa</span>
+              <span class="mkMNum">0314-3093944</span>
+              <span class="mkMTitle">Hammad Ali</span>
+            </div>
+          </div>
+
+          <div class="mkMethodRow">
+            <div class="mkMethodIcon">
+              <img src="/public/pricing-popup-logos/jaz-cash.png" alt="JC" class="mkMethodImg">
+            </div>
+            <div class="mkMethodInfo">
+              <span class="mkMName">JazzCash</span>
+              <span class="mkMNum">0314-3093944</span>
+              <span class="mkMTitle">Hammad Ali</span>
+            </div>
+          </div>
+
+          <div class="mkMethodRow">
+            <div class="mkMethodIcon">
+              <img src="/public/pricing-popup-logos/sadapay.jpg" alt="SP" class="mkMethodImg">
+            </div>
+            <div class="mkMethodInfo">
+              <span class="mkMName">SadaPay</span>
+              <span class="mkMNum">0314-3093944</span>
+              <span class="mkMTitle">Hammad Ali</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mkUserRef">
+        <p>Account Email:</p>
+        <strong id="mpUserEmail">Checking...</strong>
+      </div>
+
+      <div class="mkActionBox">
+        <p class="mkNote">Send screenshot to activate instantly.</p>
+        <a href="#" id="btnWhatsApp" target="_blank" class="mkBtnWhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Send via WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* CSS Improved & Cleaned */
+.mkModal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; }
+.mkModal__overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); }
+.mkModal__content { position: relative; background: #fff; width: 90%; max-width: 380px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); animation: popUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes popUp { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+.mkModal__close { position: absolute; top: 12px; right: 12px; background: #f3f4f6; border: none; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; color: #666; z-index: 10; font-weight: bold; }
+
+.mkModal__header { padding: 24px 20px 15px; text-align: center; border-bottom: 1px solid #f3f4f6; }
+.mkModal__title { margin: 0; font-size: 18px; font-weight: 800; color: #111; }
+.highlight { color: #2563eb; }
+.mkModal__sub { margin: 4px 0 0; font-size: 12px; color: #6b7280; }
+
+.mkModal__body { padding: 20px; }
+
+.mkBillBox { display: flex; justify-content: space-between; margin-bottom: 16px; padding: 12px 15px; background: #f0f7ff; border-radius: 12px; border: 1px solid #e0efff; }
+.mkBillRow span { font-size: 10px; text-transform: uppercase; color: #718096; font-weight: 700; display: block; }
+.mkBillRow strong { font-size: 14px; color: #1a202c; }
+.mkPriceTag { color: #2563eb !important; }
+
+.mkBankBox { background: #fafafa; border: 1px solid #f0f0f0; border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+.mkLabel { margin: 10px 15px 5px; font-size: 10px; font-weight: 700; color: #a0aec0; text-transform: uppercase; }
+
+.mkMethodRow { display: flex; align-items: center; gap: 12px; padding: 10px 15px; border-bottom: 1px solid #f1f1f1; transition: 0.2s; }
+.mkMethodRow:last-child { border-bottom: none; }
+
+.mkMethodIcon { width: 38px; height: 38px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #fff; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; }
+.mkMethodImg { width: 100%; height: 100%; object-fit: contain; padding: 2px; }
+
+.mkMethodInfo { display: flex; flex-direction: column; }
+.mkMName { font-size: 11px; color: #718096; }
+.mkMNum { font-size: 13px; font-weight: 800; color: #2d3748; letter-spacing: 0.3px; }
+.mkMTitle { font-size: 10px; color: #a0aec0; }
+
+.mkUserRef { text-align: center; margin-bottom: 16px; background: #fffbeb; padding: 8px; border-radius: 8px; border: 1px solid #fef3c7; }
+.mkUserRef p { margin: 0; font-size: 10px; color: #92400e; font-weight: 600; }
+.mkUserRef strong { font-size: 12px; color: #78350f; word-break: break-all; }
+
+.mkNote { font-size: 11px; color: #718096; margin-bottom: 10px; text-align: center; }
+.mkBtnWhatsApp { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #22c55e; color: white; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: 0.3s; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2); }
+.mkBtnWhatsApp:hover { background: #16a34a; transform: translateY(-2px); }
+</style>

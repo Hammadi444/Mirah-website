@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile — Mirah Tools</title>
+ <link rel="icon" type="image/png" href="../assets/BymflQPK.png">
+
+
+  <!-- new page css -->
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@700&family=Sometype+Mono:wght@500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="../assets/ClaA0ifc.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/CzyAB39g.js">
+  <link rel="modulepreload" crossorigin href="../assets/CbFKLNFx.js">
+  <link rel="modulepreload" crossorigin href="../assets/CF1HXn2s.js">
+  <link rel="stylesheet" crossorigin href="../assets/Bnc69Vgf.css">
+  <link rel="stylesheet" crossorigin href="../assets/BlUHduWG.css">
+  <link rel="stylesheet" crossorigin href="../assets/D2PASzmO.css">
+</head>
+
+
+
+
+
+<body>
+
+
+<!-- ================= HEADER / NAVBAR ================= -->
+  <div data-partial="header"></div>
+
+  <!-- ✅ reuse same navbar HTML (paste your existing navbar here) -->
+  <!-- IMPORTANT: make sure session-ui.js is loaded on this page too -->
+
+  <main class="pWrap">
+    <section class="pHead">
+        
+      <div class="pHead__left">
+        <div class="pEyebrow">ACCOUNT</div>
+        <h1 class="pTitle">Profile & Subscription</h1>
+        <p class="pSub">Manage your account details, subscription limits, and usage — all in one place.</p>
+        <div class="pHeadAccent"></div>
+
+      </div>
+
+    
+    </section>
+
+    <!-- =========================
+         PROFILE HEADER (Mirah style)
+    ========================= -->
+    <section class="pCard pHero" id="mk-profile">
+      <div class="pHero__row">
+        <!-- Avatar -->
+        <div class="pHero__avatar">
+          <img id="mk-avatar" src="" alt="avatar" class="pAvatarImg" hidden />
+          <div id="mk-avatar-fallback" class="pAvatarFallback">MK</div>
+          <!-- ✅ plan ring + badge -->
+<span class="pPlanRing" id="pPlanRing" aria-hidden="true"></span>
+<span class="pPlanBadge" id="pPlanBadge" aria-hidden="true">TRIAL</span>
+
+
+          <button id="avatar-menu-btn" type="button" class="pAvatarEdit" aria-label="Avatar menu">✎</button>
+
+          <div id="avatar-menu" class="pMenu" hidden>
+            <button id="avatar-menu-upload" class="pMenu__item" type="button">Upload photo</button>
+            <button id="avatar-menu-remove" class="pMenu__item pMenu__item--danger" type="button">Remove photo</button>
+          </div>
+
+          <input id="profile-avatar-input" type="file" accept="image/*" hidden />
+        </div>
+
+        <!-- Identity -->
+        <div class="pHero__id">
+          <div id="mk-display-name" class="pName">—</div>
+          <div id="mk-username" class="pUser">@—</div>
+          <div id="mk-bio" class="pBio"></div>
+
+        <div class="pHero__actions">
+  <button id="mk-edit-profile-btn" type="button" class="pBtn pBtn--solid">Edit profile</button>
+
+  <!-- ✅ Upgrade -->
+  <a href="/pricing" class="pBtn pBtn--ghost" id="btnUpgrade">Upgrade</a>
+
+  <!-- ✅ Logout -->
+  <button id="btnLogout" type="button" class="pBtn pBtn--ghost pBtn--danger">Logout</button>
+  <a
+    id="btnDashboard"
+    href="https://dashboard.mirah.store"
+    class="pBtn pBtn--solid pBtn--dash"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Open Dashboard
+  </a>
+  <div id="mk-profile-status" class="pHint"></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         TWO COLUMN GRID
+    ========================= -->
+    <section class="pGrid">
+
+      <!-- BASIC INFO -->
+      <section class="pCard">
+        <div class="pCard__top">
+          <h2 class="pCard__title">Basic information</h2>
+          <p class="pCard__sub">This information helps personalize your Mirah workspace.</p>
+        </div>
+
+        <div class="pForm">
+          <label class="pField">
+            <span>Email (read only)</span>
+            <input id="prof-email" class="pInput" readonly />
+          </label>
+
+          <label class="pField">
+            <span>Name</span>
+            <input id="prof-name" class="pInput" placeholder="Your name" />
+          </label>
+
+          <label class="pField">
+            <span>Store name</span>
+            <input id="prof-store" class="pInput" placeholder="Your store" />
+          </label>
+
+          <div class="pRow2">
+            <label class="pField">
+              <span>Country</span>
+              <input id="prof-country" class="pInput" placeholder="Pakistan" />
+            </label>
+            <label class="pField">
+              <span>City</span>
+              <input id="prof-city" class="pInput" placeholder="Lahore" />
+            </label>
+          </div>
+
+          <label class="pField">
+            <span>Phone</span>
+            <input id="prof-phone" class="pInput" placeholder="+92..." />
+          </label>
+
+          <div class="pActions">
+            <button id="prof-save-btn" class="pBtn pBtn--solid" type="button">Save basic info</button>
+            <span id="prof-save-msg" class="pSaveMsg"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLAN OVERVIEW -->
+  <section class="pCard">
+
+        <div class="pCard__top">
+          <h2 class="pCard__title">Subscription & plan overview</h2>
+          <p class="pCard__sub">Your plan, dates, limits, and usage — updated automatically.</p>
+        </div>
+
+        <div class="pBadges">
+          <span id="prof-plan-badge" class="pBadge pBadge--primary">PLAN</span>
+          <span id="prof-trial-badge" class="pBadge pBadge--warn">Trial</span>
+          <span id="prof-payment-badge" class="pBadge pBadge--muted">Payment</span>
+        </div>
+
+        <div class="pInfoGrid">
+          <div class="pInfo">
+            <div class="pInfo__k">Plan key</div>
+            <div id="prof-plan-key" class="pInfo__v">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Price</div>
+            <div id="prof-price" class="pInfo__v">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Plan duration (days)</div>
+            <div id="prof-duration-days" class="pInfo__v">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Duration (months)</div>
+            <div id="prof-duration-months" class="pInfo__v">—</div>
+          </div>
+        </div>
+
+        <div class="pInfoGrid pInfoGrid--dates">
+          <div class="pInfo">
+            <div class="pInfo__k">Plan start</div>
+            <div id="prof-plan-start" class="pInfo__vSmall">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Plan end</div>
+            <div id="prof-plan-end" class="pInfo__vSmall">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Account created</div>
+            <div id="prof-created-at" class="pInfo__vSmall">—</div>
+          </div>
+          <div class="pInfo">
+            <div class="pInfo__k">Plan ID</div>
+            <div id="prof-plan-id" class="pInfo__mono">—</div>
+          </div>
+        </div>
+
+        <div class="pDivider"></div>
+
+        <div class="pBlockTitle">Usage & limits</div>
+
+        <div class="pInfoGrid">
+          <div class="pInfo"><div class="pInfo__k">Orders used</div><div id="prof-orders-used" class="pInfo__v">0</div></div>
+          <div class="pInfo"><div class="pInfo__k">Monthly limit</div><div id="prof-monthly-limit" class="pInfo__v">0</div></div>
+          <div class="pInfo"><div class="pInfo__k">Overflow limit</div><div id="prof-overflow-limit" class="pInfo__v">0</div></div>
+          <div class="pInfo"><div class="pInfo__k">Total limit</div><div id="prof-total-limit" class="pInfo__v">0</div></div>
+          <div class="pInfo"><div class="pInfo__k">Remaining orders</div><div id="prof-remaining" class="pInfo__v pInfo__v--good">0</div></div>
+          <div class="pInfo"><div class="pInfo__k">Unlimited?</div><div id="prof-unlimited" class="pInfo__v">No</div></div>
+        </div>
+
+        <div class="pUsage">
+          <div class="pUsage__top">
+            <span>Usage this plan</span>
+            <span id="prof-usage-percent">0%</span>
+          </div>
+          <div class="pBar">
+            <div id="prof-usage-bar" class="pBar__fill" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="pDivider"></div>
+
+        <div class="pBlockTitle">Current month window</div>
+        <div class="pInfoGrid pInfoGrid--month">
+          <div class="pInfo"><div class="pInfo__k">Month #</div><div id="prof-month-number" class="pInfo__vSmall">—</div></div>
+          <div class="pInfo"><div class="pInfo__k">Start</div><div id="prof-month-start" class="pInfo__vSmall">—</div></div>
+          <div class="pInfo"><div class="pInfo__k">End</div><div id="prof-month-end" class="pInfo__vSmall">—</div></div>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- =========================
+       EDIT PROFILE MODAL
+  ========================= -->
+  <div id="mk-edit-profile-modal" class="pModal" hidden>
+    <div class="pModal__card">
+      <div class="pModal__top">
+        <div class="pModal__title">Edit profile</div>
+        <button id="mk-edit-profile-close" type="button" class="pX">✕</button>
+      </div>
+
+      <div class="pModal__body">
+        <label class="pField">
+          <span>Username</span>
+          <input id="mk-username-input" class="pInput" placeholder="@metkonect" />
+          <div class="pTiny">Unique • letters/numbers/._- allowed</div>
+        </label>
+
+        <label class="pField">
+          <span>Display name</span>
+          <input id="mk-display-name-input" class="pInput" placeholder="e.g. Seeing Mirah" />
+          <div class="pTiny">Max 15 characters</div>
+        </label>
+
+        <label class="pField">
+          <span>Bio</span>
+          <textarea id="mk-bio-input" class="pText" rows="3" placeholder="Write something…"></textarea>
+          <div id="mk-bio-counter" class="pTinyRight">0/500</div>
+        </label>
+
+        <div class="pModal__actions">
+          <div id="mk-edit-status" class="pHint"></div>
+          <div class="pModal__btns">
+            <button id="mk-edit-cancel" type="button" class="pBtn pBtn--ghost">Cancel</button>
+            <button id="mk-edit-save" type="button" class="pBtn pBtn--solid">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       AVATAR CROP MODAL (keep your existing UI)
+       NOTE: keeping IDs same, you already have full crop logic
+  ========================= -->
+  <div id="avatar-crop-modal" class="pModal" hidden>
+    <div class="pModal__card pModal__card--wide">
+      <div class="pModal__top">
+        <div class="pModal__title">Edit photo</div>
+        <button id="avatar-crop-close" type="button" class="pX">✕</button>
+      </div>
+
+      <div class="pCrop">
+        <canvas id="avatar-crop-canvas" class="pCanvas"></canvas>
+        <div class="pCircleMask" aria-hidden="true"></div>
+
+        <div class="pCrop__controls">
+          <div class="pTiny">Zoom</div>
+          <input id="avatar-crop-zoom" type="range" min="1" max="3" step="0.01" value="1">
+          <div id="avatar-crop-zoom-label" class="pTinyRight">100%</div>
+        </div>
+      </div>
+
+      <div class="pModal__foot">
+        <button id="avatar-crop-cancel" type="button" class="pBtn pBtn--ghost">Cancel</button>
+        <button id="avatar-crop-apply" type="button" class="pBtn pBtn--solid">Apply</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+  
+<div data-partial="footer"></div>
+
+  <!-- Supabase + session UI -->
+  <!-- This page script -->
+  
+</body>
+</html>
